@@ -1,0 +1,13 @@
+
+# create a cluster
+eksctl create cluster -f eks-course-cluster-config.yaml
+
+# Get nodegroups in a cluster
+eksctl get nodegroup --cluster EKS-course-cluster-with-scale-1
+
+#Scale up and down with desired capacity
+eksctl scale nodegroup --cluster EKS-course-cluster-with-scale-1 --name scale-ap-south-1a --nodes 1
+
+# Get all containers
+kubectl get pods --all-namespaces
+

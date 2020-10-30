@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-hello-rest-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: spring-hello-rest
+  template:
+    metadata:
+      labels:
+        component: spring-hello-rest
+    spec:
+      containers:
+        - name: spring-hello-rest
+          image: nareshsaw5/spring-greeting-rest
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 8080
